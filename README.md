@@ -17,3 +17,5 @@ https://morioh.com/p/fe249dd19cc1<br/>
 https://medium.com/swlh/containerize-asp-net-core-3-1-with-docker-c5e1acabba21<br/>
 Repo: https://medium.com/@marekzyla95/mongo-repository-pattern-700986454a0e<br/>
 Algorhitm https://gist.github.com/Amitkapadi/b13ee4a68afba3a5ace7497b25e11fca<br/>
+
+https://gist.github.com/shaunlebron/746476e6e7a4d698b373 :)) <br/>
