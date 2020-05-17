@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Amber.Data\Amber.Data.csproj" />
+    <ProjectReference Include="..\Amber.Logic\Amber.Logic.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
+    <PackageReference Include="TinyMapper" Version="3.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MapService.cs" />
+    <Compile Remove="TankService.cs" />
+    <Compile Remove="TankService.cs" />
+  </ItemGroup>
+</Project>
