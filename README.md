@@ -7,7 +7,7 @@ Am pus un screenshot in radacina solutiei cu un sample de completare in swagger 
 <br/>
 <br/>
 In mod ideal as fi pus seeding-ul bazei de mongo in composer, dintr-un fisier json si nu in cod.<br/>
-As fi scapat GameService din Infra si l-as fi dus in Logic.<br/>
+As fi dus logica din GameService in Logic.<br/>
 Ii lipseste error handling si logging.<br/>
 As fi revizuit metodele async.<br/>
 Am lasat niste clase nefolosite in solutie, am incercat initial sa mimez referetierea gen sql prin ObjectIds si atribute, cu popularea obiectelor copil prin repository.
