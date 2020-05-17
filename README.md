@@ -6,6 +6,6 @@ Nu am testat mai multe jocuri odata, ar trebui sa mearga :)<br/>
 Am pus un screenshot in radacina solutiei cu un sample de completare in swagger pentru declansarea unui joc<br/>
 <br/>
 <br/>
-In mod ideal as fi pus seeding-ul bazei de mongo in domposer si nu in cod.<br/>
+In mod ideal as fi pus seeding-ul bazei de mongo in composer, dintr-un fisier json si nu in cod.<br/>
 Ii lipseste error handling si logging.<br/>
 As fi revizuit metodele async.
