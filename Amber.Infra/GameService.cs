@@ -25,16 +25,16 @@ namespace Amber.Infra
             var sb = new StringBuilder();
 
             var tanks = await _tankRepo.FindManyByNamesAsync(new string[] { request.TankOneName, request.TankTwoName });
-            var tankOne = tanks.First();
-            var tankTwo = tanks.Skip(1).First();
+            var tankOne = tanks.First(x => x.Name == request.TankOneName);
+            var tankTwo = tanks.First(x => x.Name == request.TankTwoName);
 
             var map = await _mapRepo.FindByNameAsync(request.MapName);
 
             //GameOn
             sb.AppendLine($"Game started between {tankOne.Name} and {tankTwo.Name} on map {map.Name}");
 
-            sb.AppendLine($"{tankOne.Name} starts at x:{request.TankOnePos[0]},y:{request.TankOnePos[1]}");
-            sb.AppendLine($"{tankTwo.Name} starts at x:{request.TankTwoPos[0]},y:{request.TankTwoPos[0]}");
+            sb.AppendLine($"{tankOne.Name} starts at x:{request.TankOnePos[0]},y:{request.TankOnePos[1]} with {tankOne.Armor} armor");
+            sb.AppendLine($"{tankTwo.Name} starts at x:{request.TankTwoPos[0]},y:{request.TankTwoPos[1]} with {tankTwo.Armor} armor");
 
             while (tankOne.Armor>=0 && tankTwo.Armor>=0)
             {
@@ -89,7 +89,10 @@ namespace Amber.Infra
                 var toIndex = Math.Min(tank.MovesPerTurn, path.result.Count)-1;
                 thisPosition = path.result[toIndex];
 
-                sb.AppendLine($"{tank.Name} moves to x:{thisPosition[0]},y:{thisPosition[1]}");
+                var currentMovements = path.result.Take(toIndex + 1);
+                var currentmovementsCoordinates = string.Join(";", currentMovements.Select(x => new StringBuilder().Append("x:").Append(x[0]).Append(",").Append("y:").Append(x[1]).ToString()));
+
+                sb.AppendLine($"{tank.Name} moves to {currentmovementsCoordinates}");
             }
             else
             {
